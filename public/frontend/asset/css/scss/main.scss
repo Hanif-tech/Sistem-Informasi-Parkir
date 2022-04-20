@@ -1,0 +1,231 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+.px {
+    padding: 0;
+}
+h4 {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: #4b4b4b;
+    &:hover {
+        color: #4b4b4b;
+    }
+    .card {
+        padding: 10px 20px;
+        border-radius: 20px;
+    }
+
+    .card-title {
+        font-weight: 600;
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+}
+.navbar-brand {
+    p {
+        margin: auto 0;
+    }
+}
+.btn-logout {
+    margin-top: 5px;
+    background-color: #f7f7f7;
+    color: #808080;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 10px;
+    &:hover {
+        background-color: rgb(190, 190, 190);
+        color: #ffffff;
+        box-shadow: 1px 1px 6px #acacac;
+    }
+}
+
+.dropdown-user {
+    position: relative;
+
+    .dropdown-group {
+        cursor: pointer;
+    }
+
+    .mainmenubtn {
+        border: none;
+        border-radius: 8px;
+        margin: auto 0;
+        margin-right: 10px;
+        font-size: 18px;
+        font-weight: 500;
+        color: #f7f7f7;
+    }
+    .dropdown-child {
+        display: none;
+        background-color: rgb(230, 230, 230);
+        min-width: 120px;
+        position: absolute;
+        border-radius: 2px;
+        margin-top: 5px;
+        box-shadow: 0px 1px 6px rgb(138, 138, 138);
+        a {
+            color: rgb(100, 100, 100);
+            padding: 6px;
+            text-decoration: none;
+            display: block;
+        }
+    }
+    .show {
+        display: block;
+    }
+}
+
+.homeMall {
+    height: 90vh;
+
+    .shadow-card {
+        box-shadow: 0px 0px 4px #a3a3a3;
+
+        &:hover {
+            box-shadow: 0px 0px 10px 3px #a3a3a3;
+            transition: 0.3s;
+        }
+    }
+}
+
+// tp_home
+.card {
+    .card-header {
+        font-weight: 600;
+        font-size: 20px;
+        padding: 10px 15px;
+        color: #e9e9e9;
+        background-color: #353535;
+    }
+    .body {
+        padding: 20px 20px;
+    }
+    label {
+        color: #353535;
+        margin-bottom: 5px;
+        font-weight: 500;
+    }
+    .btn-input-masuk-parkir {
+        background-color: #353535;
+        color: #e9e9e9;
+        padding: 5px 11px;
+        border-radius: 5px;
+        &:hover {
+            background-color: #525252;
+        }
+    }
+
+    .card-body {
+        .title {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        // .total-pendapatan {
+        //     color: #d6f71f;
+        // }
+    }
+}
+
+.table {
+    margin-top: 0.5px;
+    .table-dark {
+        tr {
+            th {
+                padding: 10px 10px;
+                background-color: #353535;
+            }
+            .col-table-1 {
+                border-radius: 3px 0 0 0;
+            }
+            .col-table-2 {
+                border-radius: 0 3px 0 0;
+            }
+        }
+    }
+}
+
+.username-profile {
+    margin-bottom: 0;
+    margin-right: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.btn-action {
+    padding: 10px 15px;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+}
+.mall {
+    margin-bottom: 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+.bg-green {
+    background-color: rgb(0, 241, 0);
+}
+.bg-red {
+    background-color: rgb(218, 1, 1);
+}
+
+.card-floor {
+    height: 180px;
+    border-radius: 10px;
+}
+.click {
+    box-shadow: 0px 0px 8px 3px rgb(97, 97, 97);
+}
+
+.container-admin {
+    height: 90vh;
+    .card-bg {
+        background-color: #f7f7f7;
+        border-radius: 10px;
+
+        .card-sub-title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .card-body {
+            a {
+                text-decoration: none;
+                .card {
+                    box-shadow: 0px 0px 1px 1px rgb(223, 222, 222);
+                    &:hover {
+                        transition: 0.2s;
+                        box-shadow: 0px 0px 8px 5px rgb(223, 222, 222);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.slug {
+    h5 {
+        font-size: 14px;
+        a {
+            text-decoration: none;
+
+            &:hover {
+                color: #747474;
+            }
+        }
+    }
+}

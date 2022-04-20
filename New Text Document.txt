@@ -1,0 +1,10 @@
+Database :
+
+	parking_list:
+	id, report_id, plat_nomor, ruang_parkir, lantai, 	jam_masuk, 	tanggal_masuk, status, jam_keluar
+
+	users:
+	id, name, email, email_verified_at, password, 	username
+
+	report:
+	id, tanggal, jumlah_mobil, biaya, status, 	menginap_hari, jumlah

@@ -1,0 +1,251 @@
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+      user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.px {
+  padding: 0;
+}
+
+h4 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #4b4b4b;
+}
+
+a:hover {
+  color: #4b4b4b;
+}
+
+a .card {
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+a .card-title {
+  font-weight: 600;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.navbar-brand p {
+  margin: auto 0;
+}
+
+.btn-logout {
+  margin-top: 5px;
+  background-color: #f7f7f7;
+  color: #808080;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 10px;
+}
+
+.btn-logout:hover {
+  background-color: #bebebe;
+  color: #ffffff;
+  -webkit-box-shadow: 1px 1px 6px #acacac;
+          box-shadow: 1px 1px 6px #acacac;
+}
+
+.dropdown-user {
+  position: relative;
+}
+
+.dropdown-user .dropdown-group {
+  cursor: pointer;
+}
+
+.dropdown-user .mainmenubtn {
+  border: none;
+  border-radius: 8px;
+  margin: auto 0;
+  margin-right: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #f7f7f7;
+}
+
+.dropdown-user .dropdown-child {
+  display: none;
+  background-color: #e6e6e6;
+  min-width: 120px;
+  position: absolute;
+  border-radius: 2px;
+  margin-top: 5px;
+  -webkit-box-shadow: 0px 1px 6px #8a8a8a;
+          box-shadow: 0px 1px 6px #8a8a8a;
+}
+
+.dropdown-user .dropdown-child a {
+  color: #646464;
+  padding: 6px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-user .show {
+  display: block;
+}
+
+.homeMall {
+  height: 90vh;
+}
+
+.homeMall .shadow-card {
+  -webkit-box-shadow: 0px 0px 4px #a3a3a3;
+          box-shadow: 0px 0px 4px #a3a3a3;
+}
+
+.homeMall .shadow-card:hover {
+  -webkit-box-shadow: 0px 0px 10px 3px #a3a3a3;
+          box-shadow: 0px 0px 10px 3px #a3a3a3;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.card .card-header {
+  font-weight: 600;
+  font-size: 20px;
+  padding: 10px 15px;
+  color: #e9e9e9;
+  background-color: #353535;
+}
+
+.card .body {
+  padding: 20px 20px;
+}
+
+.card label {
+  color: #353535;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.card .btn-input-masuk-parkir {
+  background-color: #353535;
+  color: #e9e9e9;
+  padding: 5px 11px;
+  border-radius: 5px;
+}
+
+.card .btn-input-masuk-parkir:hover {
+  background-color: #525252;
+}
+
+.card .card-body .title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.table {
+  margin-top: 0.5px;
+}
+
+.table .table-dark tr th {
+  padding: 10px 10px;
+  background-color: #353535;
+}
+
+.table .table-dark tr .col-table-1 {
+  border-radius: 3px 0 0 0;
+}
+
+.table .table-dark tr .col-table-2 {
+  border-radius: 0 3px 0 0;
+}
+
+.username-profile {
+  margin-bottom: 0;
+  margin-right: 5px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.btn-action {
+  padding: 10px 15px;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+}
+
+.mall {
+  margin-bottom: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.bg-green {
+  background-color: #00f100;
+}
+
+.bg-red {
+  background-color: #da0101;
+}
+
+.card-floor {
+  height: 180px;
+  border-radius: 10px;
+}
+
+.click {
+  -webkit-box-shadow: 0px 0px 8px 3px #616161;
+          box-shadow: 0px 0px 8px 3px #616161;
+}
+
+.container-admin {
+  height: 90vh;
+}
+
+.container-admin .card-bg {
+  background-color: #f7f7f7;
+  border-radius: 10px;
+}
+
+.container-admin .card-bg .card-sub-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.container-admin .card-bg .card-body a {
+  text-decoration: none;
+}
+
+.container-admin .card-bg .card-body a .card {
+  -webkit-box-shadow: 0px 0px 1px 1px #dfdede;
+          box-shadow: 0px 0px 1px 1px #dfdede;
+}
+
+.container-admin .card-bg .card-body a .card:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-box-shadow: 0px 0px 8px 5px #dfdede;
+          box-shadow: 0px 0px 8px 5px #dfdede;
+}
+
+.slug h5 {
+  font-size: 14px;
+}
+
+.slug h5 a {
+  text-decoration: none;
+}
+
+.slug h5 a:hover {
+  color: #747474;
+}
+/*# sourceMappingURL=main.css.map */
