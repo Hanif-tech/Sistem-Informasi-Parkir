@@ -46,10 +46,12 @@ Route::prefix('admin')->namespace('Admin')->middleware(['auth', 'check'])->group
     //laporan
     Route::get('/laporan',[App\Http\Controllers\AdminController::class,'laporan'] )->name('laporan');
     Route::get('/laporan/detail/{date}',[App\Http\Controllers\AdminController::class,'detailLaporan'] )->name('detail-laporan');
+    Route::get('/cari', [App\Http\Controllers\AdminController::class,'cariLaporan'])->name('cari-laporan');
 
     //daftar petugas
     Route::get('/users',[App\Http\Controllers\AdminController::class,'users'] )->name('users');
-
+    Route::post('/register', [App\Http\Controllers\AdminController::class,'register'])->name('register-user');
+    Route::get('/delete/{id}', [App\Http\Controllers\AdminController::class,'delete'])->name('user-delete');
 });
 
 

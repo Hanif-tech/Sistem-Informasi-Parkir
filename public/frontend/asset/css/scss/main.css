@@ -248,4 +248,10 @@ a .card-title {
 .slug h5 a:hover {
   color: #747474;
 }
+
+.h3 {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
 /*# sourceMappingURL=main.css.map */

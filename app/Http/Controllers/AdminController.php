@@ -9,6 +9,7 @@ use App\Models\Car;
 use App\Models\CarPark;
 use App\Models\mall;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 
 class AdminController extends Controller
@@ -120,12 +121,20 @@ class AdminController extends Controller
         //query menghitung inap per hari
         // select tanggal_masuk, biaya_parkir, count(tanggal_masuk) as jumlah_mobil, sum(biaya_parkir) as jumlah_biaya, status, datediff(tanggal_keluar, tanggal_masuk) as Menginap from cars GROUP BY tanggal_masuk
 
-        //custom query
+        //custom query perhari
         $items = DB::select('select tanggal_masuk, biaya_parkir, count(tanggal_masuk) as jumlah_mobil, sum(biaya_parkir) as jumlah_biaya, status from cars GROUP BY tanggal_masuk');
 
+        // custom query perbulan
+        $bulan = DB::select('select tanggal_masuk, biaya_parkir, count(plat_nomor) as jumlah_mobil, sum(biaya_parkir) as jumlah_biaya, status from cars GROUP BY MONTH(tanggal_masuk)');
+
+        // custom query perbulan
+        $pilihanBulan = DB::select('select tanggal_masuk, biaya_parkir, count(plat_nomor) as jumlah_mobil, sum(biaya_parkir) as jumlah_biaya, status from cars where month(tanggal_masuk) = ? ',[04]);
+
+        // $items = Car::whereBetween('tanggal_masuk', ['2022-03-08', '2022-04-26'])->get();
         return view('pages.admin.report',[
-            'items' => $items,
-            'no'    => 1
+            'no'    => 1,
+            // 'bulan' => $pilihanBulan
+            'items' => $items
         ]);
     }
 
@@ -142,7 +151,48 @@ class AdminController extends Controller
     public function users()
     {
         $items = User::with(['mall'])->get();
+        $malls = mall::all();
         return view("pages.admin.users",[
+            'items' => $items,
+            'malls' => $malls
+        ]);
+    }
+
+    public function register(Request $request)
+    {
+        $data = $request->validate([
+            'name' => 'string|max:20|required',
+            'email' => 'email|required',
+            'password' => 'required|min:8',
+            'username' => 'string|required|max:10',
+            'roles' => 'required',
+            'mall_id' => 'required|integer'
+        ]);
+
+        $data['password'] = Hash::make($request->password);
+
+        User::create($data);
+        return redirect()->route('users');
+    }
+
+    public function delete($id)
+    {
+        $user = User::find($id);
+
+        $user->delete();
+        // User::truncate();
+        return redirect()->route('users');
+    }
+
+    public function cariLaporan(Request $request){
+        DB::statement("SET SQL_MODE=''");
+        $input = $request->validate([
+            'bulan' => 'integer|required'
+        ]);
+
+        $items = DB::select('select tanggal_masuk, biaya_parkir, count(plat_nomor) as jumlah_mobil, sum(biaya_parkir) as jumlah_biaya, status from cars WHERE month(tanggal_masuk) = ? Group by tanggal_masuk', [$input['bulan']]);
+        return view('pages.admin.report',[
+            'no'    => 1,
             'items' => $items
         ]);
     }

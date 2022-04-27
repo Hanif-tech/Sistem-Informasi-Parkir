@@ -7,7 +7,12 @@
     </div>
 
     <div class="row mt-4">
-        <h3>Users</h3>
+        <div class="users d-flex">
+            <h3 class="me-3 h3 align-items-center">Users</h3>
+                <button type="button" class="btn btn-info px-3 py-2 edit" data-bs-toggle="modal" data-bs-target="#editModal">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+        </div>
         <div class="col-md-12">
             <table class="table table-striped mt-4 "id="datatable" >
                 <thead>
@@ -45,10 +50,8 @@
                         <td>{{ $item->roles }}</td>
                         <td>{{ $item->mall['nama_mall'] }}</td>
                         <td>
-                            <button type="button" class="btn btn-info px-2 py-2 edit">
-                                <i class="fa fa-pencil-alt"></i>
-                            </button>
-                            <form action="" method="GET" class="d-inline ">
+
+                            <form action="{{ route('user-delete', $item->id) }}" method="GET" class="d-inline ">
                                 @csrf
                                 @method('delete')
                                 <button class="btn btn-danger px-2 py-2">
@@ -73,6 +76,63 @@
       {{-- <div class="pages  d-flex justify-content-end mt-2">
           {{ $items->links() }}
       </div> --}}
+      {{-- modal --}}
+      <div class="modal fade " id="editModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="editModal" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Tambah Users</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="{{ route('register-user') }}" method="POST" id="editForm">
+                @csrf
+
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="">Nama</label>
+                    <input type="text" name="name" id="fname" class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="text" name="email" id="flantai" class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label for="">Username</label>
+                    <input type="text" name="username" id="fusername" class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" name="password" id="fpassword" class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label for="">Password Confirm</label>
+                    <input type="password" name="password_confirmation" id="fpassword-confirmation" class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label for="">Roles</label>
+                    <input type="text" name="roles" id="froles" class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label for="mall_id">Mall</label>
+                    <select name="mall_id" id="mall_id" class="form-select">
+                        <option value="">Pilih mall..</option>
+                        @foreach ($malls as $item)
+                            <option value="{{ $item->id }}">{{ $item->nama_mall }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary px-3 py-2" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary px-3 py-2">Tambah User</button>
+            </div>
+        </form>
+
+        </div>
+        </div>
+    </div>
 </div>
 @endsection
 
@@ -83,7 +143,7 @@
     <script>
         // mengambil data dari tabel dan dikirim ke modal jquery
         $(document).ready(function() {
-
+            document.getElementById('editForm').reset();
            const table = $('#datatable').DataTable({
                 'dom': '<"top">rt<"bottom"p><"clear">',
                 'oLanguage': {
@@ -96,23 +156,24 @@
 
 
             // start edit record
-            table.on('click', '.edit', function(){
+        //     table.on('click', '.edit', function(){
 
-            $tr = $(this).closest('tr');
-            if($($tr).hasClass('child')){
-                $tr = $tr.prev('.parent');
-            }
+        //     $tr = $(this).closest('tr');
+        //     if($($tr).hasClass('child')){
+        //         $tr = $tr.prev('.parent');
+        //     }
 
-            const data = table.row($tr).data();
-            console.log(data);
+        //     const data = table.row($tr).data();
+        //     console.log(data);
 
-            $('#fruang').val(data[2]);
-            $('#flantai').val(data[3]);
+        //     $('#fruang').val(data[2]);
+        //     $('#flantai').val(data[3]);
 
-            $('#editForm').attr('action', '/admin/update-ruang/'+data[0]);
-            $('#editModal').modal('show')
-            })
+        //     $('#editForm').attr('action', '/admin/update-ruang/'+data[0]);
+        //     $('#editModal').modal('show')
+        //     })
 
-        } );
+        // }
+        );
     </script>
 @endpush
